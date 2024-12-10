@@ -117,6 +117,7 @@ def solve_wordle(initial_word_list):
             return False, len(guesses)
             
     return False, max_attempts
+
 def get_user_feedback(word):
     """
     Get feedback from the user for a given word using a graphical interface.
@@ -124,25 +125,22 @@ def get_user_feedback(word):
     """
     feedback = ['b'] * 5  # Default feedback is black
     
-    
-def update_feedback(index, color):
-    feedback[index] = color
-    if color == 'g':
-        circles[index].config(bg="green")
-    elif color == 'y':
-        circles[index].config(bg="yellow")
-    else:
-        circles[index].config(bg="black")
+    def update_feedback(index, color):
+        feedback[index] = color
+        if color == 'g':
+            circles[index].config(bg="green")
+        elif color == 'y':
+            circles[index].config(bg="yellow")
+        else:
+            circles[index].config(bg="black")
 
+    def submit_feedback():
+        win.destroy()
 
+    submit_btn = tk.Button(
+        win, text="Submit", command=submit_feedback
+    )
+    submit_btn.pack(pady=20)
 
-def submit_feedback():
-    win.destroy()
-
-submit_btn = tk.Button(
-    win, text="Submit", command=submit_feedback
-)
-submit_btn.pack(pady=20)
-
-win.mainloop()
-return ''.join(feedback)
+    win.mainloop()
+    return ''.join(feedback)

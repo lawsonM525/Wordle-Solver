@@ -1,6 +1,6 @@
 import os
 
-file_path="C:\Users\USER\OneDrive\Desktop\TRIAL"
+file_path = r"C:\Users\USER\OneDrive\Desktop\TRIAL"
 
 def load_performance(file_path):
     #Load performance data from file, return None if file doesn't exist/invalid
