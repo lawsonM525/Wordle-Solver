@@ -1,0 +1,2 @@
+# Wrodle-Solver
+eeeeAAA
